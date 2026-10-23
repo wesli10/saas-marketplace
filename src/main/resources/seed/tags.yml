@@ -1,0 +1,16 @@
+# Vocabulario de tags, nos dois idiomas (constituicao secao 5).
+- { slug: chatbot, name_pt: Chatbot, name_en: Chatbot }
+- { slug: ia-generativa, name_pt: IA generativa, name_en: Generative AI }
+- { slug: automacao, name_pt: Automação, name_en: Automation }
+- { slug: crm, name_pt: CRM, name_en: CRM }
+- { slug: no-code, name_pt: No-code, name_en: No-code }
+- { slug: atendimento, name_pt: Atendimento, name_en: Customer support }
+- { slug: agendamento, name_pt: Agendamento, name_en: Scheduling }
+- { slug: e-commerce, name_pt: E-commerce, name_en: E-commerce }
+- { slug: marketing, name_pt: Marketing, name_en: Marketing }
+- { slug: vendas, name_pt: Vendas, name_en: Sales }
+- { slug: analytics, name_pt: Analytics, name_en: Analytics }
+- { slug: multicanal, name_pt: Multicanal, name_en: Multichannel }
+- { slug: workflow, name_pt: Workflow, name_en: Workflow }
+- { slug: copywriting, name_pt: Copywriting, name_en: Copywriting }
+- { slug: integracao, name_pt: Integração, name_en: Integration }

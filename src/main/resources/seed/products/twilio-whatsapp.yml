@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: twilio-whatsapp
+name: "Twilio WhatsApp"
+category: automacao-de-whatsapp
+tagline_pt: "Mensagens no WhatsApp cobradas por mensagem, sem mensalidade"
+tagline_en: "WhatsApp messaging billed per message, with no monthly fee"
+description_pt: >-
+  Acesso programavel ao WhatsApp pela Twilio, cobrado por uso. A pagina indica US$ 0,005 de taxa Twilio por mensagem enviada ou recebida, mais as tarifas da Meta por categoria - US$ 0,0034 para utilidade e autenticacao fora da janela de atendimento, e sem cobranca da Meta em marketing e mensagens livres dentro da janela. Nao ha mensalidade de plataforma e a conta comeca gratuita.
+description_en: >-
+  Programmable WhatsApp access from Twilio, billed by usage. The page lists a US$ 0.005 Twilio fee per inbound or outbound message, plus Meta template fees by category - US$ 0.0034 for utility and authentication outside the service window, with no Meta charge for marketing and free-form messages inside it. There is no platform monthly fee and accounts start free.
+website_url: https://www.twilio.com
+logo_url: null
+pricing_model: USAGE_BASED
+price_min: 0.0050
+price_currency: USD
+price_period: null
+has_free_trial: true
+has_free_plan: false
+supported_languages: [en]
+hq_country: US
+source_note: "https://www.twilio.com/en-us/whatsapp/pricing - coletado em 2026-08-26"
+integrations: [whatsapp]
+tags: [integracao, automacao]
+content:
+  "pt-BR":
+    pros:
+      - "Sem mensalidade de plataforma: paga-se por mensagem enviada ou recebida"
+      - "Comeco gratuito, sem cartao de credito"
+      - "Calculadora de custo na propria pagina de precos"
+    cons:
+      - "A conta soma a taxa da Twilio com a tarifa da Meta, que varia por categoria de mensagem"
+      - "Precos em dolar e por unidade, o que dificulta comparar com quem cobra mensalidade"
+      - "Exige desenvolvimento: e API, nao produto de tela"
+    best_for: "Times tecnicos que preferem pagar so pelo que enviarem"
+    faq:
+      - question: "Quanto custa por mensagem?"
+        answer: "US$ 0,005 de taxa Twilio, mais a tarifa da Meta conforme a categoria da mensagem."
+      - question: "Tem mensalidade?"
+        answer: "Nao: a pagina de precos nao indica taxa mensal de plataforma."
+  "en":
+    pros:
+      - "No platform monthly fee: you pay per message sent or received"
+      - "Free start with no credit card"
+      - "Cost calculator on the pricing page itself"
+    cons:
+      - "The bill combines the Twilio fee with Meta's per-category template fee"
+      - "Priced in US dollars and per unit, which is hard to compare against monthly plans"
+      - "Requires development: it is an API, not a ready-made UI"
+    best_for: "Technical teams that prefer paying only for what they send"
+    faq:
+      - question: "What does a message cost?"
+        answer: "US$ 0.005 in Twilio fees, plus Meta's fee depending on the message category."
+      - question: "Is there a monthly fee?"
+        answer: "No: the pricing page lists no platform monthly fee."

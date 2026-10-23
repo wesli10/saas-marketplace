@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: n8n
+name: "n8n"
+category: agentes-e-workflows
+tagline_pt: "Automacao com nuvem paga e edicao comunitaria auto-hospedada"
+tagline_en: "Automation with a paid cloud and a self-hosted community edition"
+description_pt: >-
+  Plataforma de automacao e agentes de IA. A pagina publica a nuvem Starter a EUR 20/mes no anual, Pro a EUR 50 e Business a EUR 667, com Enterprise sob consulta. Nao ha faixa gratuita na nuvem, mas existe a Community Edition auto-hospedada, distribuida no GitHub. O teste dispensa cartao.
+description_en: >-
+  Automation and AI agent platform. The page publishes cloud Starter at EUR 20/month annually, Pro at EUR 50 and Business at EUR 667, with Enterprise quote-only. There is no free cloud tier, but a self-hosted Community Edition is distributed on GitHub. The trial requires no credit card.
+website_url: https://n8n.io
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 20.00
+price_currency: EUR
+price_period: MONTH
+has_free_trial: true
+has_free_plan: false
+supported_languages: [en]
+hq_country: DE
+source_note: "https://n8n.io/pricing/ - coletado em 2026-08-26"
+integrations: []
+tags: [automacao, workflow, ia-generativa]
+content:
+  "pt-BR":
+    pros:
+      - "Edicao comunitaria auto-hospedada, para quem quer rodar no proprio servidor"
+      - "Teste sem cartao de credito, com creditos do assistente de IA"
+      - "Cobranca por execucao, e nao por usuario"
+    cons:
+      - "Sem faixa gratuita na nuvem"
+      - "Precos em euro"
+      - "Salto grande do Pro para o Business"
+    best_for: "Times tecnicos que querem controlar onde a automacao roda"
+    faq:
+      - question: "Da para rodar sem pagar?"
+        answer: "Na nuvem nao ha faixa gratuita, mas a Community Edition e auto-hospedada e esta no GitHub."
+      - question: "Precisa de cartao para testar?"
+        answer: "Nao, segundo a pagina de precos."
+  "en":
+    pros:
+      - "Self-hosted community edition for running on your own server"
+      - "Trial with no credit card, including AI assistant credits"
+      - "Billed per execution rather than per user"
+    cons:
+      - "No free cloud tier"
+      - "Priced in euros"
+      - "Large gap between Pro and Business"
+    best_for: "Technical teams that want control over where automation runs"
+    faq:
+      - question: "Can I run it without paying?"
+        answer: "There is no free cloud tier, but the self-hosted Community Edition is on GitHub."
+      - question: "Do I need a card to try it?"
+        answer: "No, according to the pricing page."

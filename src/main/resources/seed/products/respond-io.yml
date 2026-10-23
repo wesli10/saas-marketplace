@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: respond-io
+name: "respond.io"
+category: automacao-de-whatsapp
+tagline_pt: "Caixa de entrada multicanal cobrada por contato ativo"
+tagline_en: "Multichannel inbox billed by monthly active contact"
+description_pt: >-
+  Plataforma de conversas para WhatsApp e outros canais, com planos dimensionados por contatos ativos no mes. A pagina publica o Starter a US$ 79/mes, o Growth a US$ 159 e o Advanced a US$ 279, com Enterprise sob consulta. O teste dura 7 dias, sem cartao, com recursos do Growth para 5 usuarios e 1.000 contatos ativos.
+description_en: >-
+  Conversation platform for WhatsApp and other channels, with plans sized by monthly active contacts. The page publishes Starter at US$ 79/month, Growth at US$ 159 and Advanced at US$ 279, with Enterprise quote-only. The trial lasts 7 days with no credit card, offering Growth features for 5 users and 1,000 monthly active contacts.
+website_url: https://respond.io
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 79.00
+price_currency: USD
+price_period: MONTH
+has_free_trial: true
+has_free_plan: false
+supported_languages: [en]
+hq_country: null
+source_note: "https://respond.io/pricing - coletado em 2026-08-26"
+integrations: [whatsapp, instagram, telegram]
+tags: [multicanal, atendimento, automacao]
+content:
+  "pt-BR":
+    pros:
+      - "Teste de 7 dias sem cartao, ja com recursos do plano Growth"
+      - "Tres faixas com preco publicado antes do Enterprise"
+      - "Cobranca por contato ativo, e nao por agente"
+    cons:
+      - "Sem plano gratuito permanente"
+      - "Precos em dolar"
+      - "Entrada de US$ 79/mes e alta para quem tem pouco volume"
+    best_for: "Times que atendem por varios canais e querem uma caixa unica"
+    faq:
+      - question: "Quanto dura o teste?"
+        answer: "7 dias, sem cartao de credito, segundo a pagina de precos."
+      - question: "Como e a cobranca?"
+        answer: "Por contatos ativos no mes, com faixas a partir de US$ 79/mes."
+  "en":
+    pros:
+      - "7-day trial with no credit card, including Growth features"
+      - "Three published tiers before Enterprise"
+      - "Billed per active contact rather than per agent"
+    cons:
+      - "No permanent free plan"
+      - "Priced in US dollars"
+      - "The US$ 79/month entry is steep for low volumes"
+    best_for: "Teams handling several channels that want a single inbox"
+    faq:
+      - question: "How long is the trial?"
+        answer: "7 days with no credit card, according to the pricing page."
+      - question: "How is it billed?"
+        answer: "By monthly active contacts, with tiers starting at US$ 79/month."

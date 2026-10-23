@@ -1,0 +1,12 @@
+# O contexto so precisa do codigo e do manifesto. node_modules sobe 300 MB para
+# o daemon a toa, e o .next local invalidaria o cache do build a cada run.
+node_modules/
+.next/
+tests/e2e/
+playwright-report/
+test-results/
+.env
+.env.*
+README.md
+playwright.config.ts
+scripts/

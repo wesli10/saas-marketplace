@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: jasper
+name: "Jasper"
+category: geracao-de-conteudo
+tagline_pt: "Assistente de escrita de marketing cobrado por assento"
+tagline_en: "Marketing writing assistant billed per seat"
+description_pt: >-
+  Assistente de IA voltado a conteudo de marketing. A pagina publica o plano Pro a US$ 69 por assento/mes no mensal ou US$ 59 no anual, com o plano Business sob consulta. Ha teste gratuito de 7 dias e nao existe plano gratuito permanente.
+description_en: >-
+  AI assistant aimed at marketing content. The page publishes the Pro plan at US$ 69 per seat/month monthly or US$ 59 annually, with the Business plan quote-only. There is a 7-day free trial and no permanent free plan.
+website_url: https://www.jasper.ai
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 59.00
+price_currency: USD
+price_period: MONTH
+has_free_trial: true
+has_free_plan: false
+supported_languages: [en]
+hq_country: US
+source_note: "https://www.jasper.ai/pricing - coletado em 2026-08-26"
+integrations: []
+tags: [ia-generativa, copywriting, marketing]
+content:
+  "pt-BR":
+    pros:
+      - "Teste gratuito de 7 dias"
+      - "Cerca de 20% de desconto no pagamento anual"
+      - "Preco do plano principal publicado, sem consulta comercial"
+    cons:
+      - "Sem plano gratuito permanente"
+      - "Precos em dolar e por assento"
+      - "Plano Business so sob consulta"
+    best_for: "Times de marketing que produzem conteudo em volume"
+    faq:
+      - question: "Qual o preco de entrada?"
+        answer: "US$ 59 por assento/mes no plano anual, ou US$ 69 no mensal."
+      - question: "Tem teste gratuito?"
+        answer: "Sim, 7 dias no plano Pro."
+  "en":
+    pros:
+      - "7-day free trial"
+      - "Around 20% discount on annual billing"
+      - "Main plan price published, with no sales call"
+    cons:
+      - "No permanent free plan"
+      - "Priced in US dollars and per seat"
+      - "Business plan is quote-only"
+    best_for: "Marketing teams producing content at volume"
+    faq:
+      - question: "What is the entry price?"
+        answer: "US$ 59 per seat/month on annual billing, or US$ 69 monthly."
+      - question: "Is there a free trial?"
+        answer: "Yes, 7 days on the Pro plan."

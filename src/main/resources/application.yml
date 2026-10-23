@@ -1,0 +1,122 @@
+spring:
+  application:
+    name: marketplace-saas
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/saasfinder}
+    username: ${DB_USER:saasfinder}
+    password: ${DB_PASSWORD:}
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      # O schema e do Flyway. Hibernate so confere se bate com as entidades.
+      ddl-auto: validate
+    properties:
+      hibernate.jdbc.time_zone: UTC
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  # SMTP do fluxo de verificacao (spec 003 secao 5.3). O default aponta para o
+  # Mailpit do compose: em desenvolvimento nenhum e-mail sai da maquina.
+  mail:
+    host: ${MAIL_HOST:localhost}
+    port: ${MAIL_PORT:1025}
+    username: ${MAIL_USER:}
+    password: ${MAIL_PASSWORD:}
+
+  jackson:
+    # JSON em snake_case (desvio D-07), como a spec secao 5.1 ja escreve os campos.
+    property-naming-strategy: SNAKE_CASE
+    # Campo nulo continua no corpo: para o cliente, "price_min": null e informacao
+    # (o produto nao tem preco divulgado), enquanto a ausencia do campo seria ambigua.
+    default-property-inclusion: always
+
+  # Faz o proprio Spring devolver os erros dele (rota inexistente, corpo invalido)
+  # como problem+json, para a API nao ter dois formatos de erro conviventes.
+  mvc:
+    problemdetails:
+      enabled: true
+
+  # Corpo e campos de resposta em snake_case (D-07), como a spec secao 5 escreve.
+  messages:
+    basename: messages
+    encoding: UTF-8
+    # Sem isto, uma requisicao sem idioma cairia no locale da JVM, que varia por
+    # maquina. O fallback tem de ser o messages.properties, que esta em pt-BR.
+    fallback-to-system-locale: false
+
+app:
+  # Idioma usado quando a requisicao nao pede nenhum, ou pede so idioma nao
+  # suportado. Valor invalido aqui derruba o boot, de proposito.
+  default-locale: ${APP_DEFAULT_LOCALE:pt-BR}
+
+  # URL publica do site. E daqui que sai o link de confirmacao do e-mail, entao
+  # um valor errado aqui manda todo mundo para o lugar errado.
+  site-url: ${SITE_URL:http://localhost:3000}
+
+  mail:
+    # Remetente das mensagens. Nao e segredo, e identifica quem escreveu - por
+    # isso o texto do e-mail nao inventa nome de marca (constituicao secao 7).
+    from: ${MAIL_FROM:reviews@localhost}
+
+  rate-limit:
+    # Limites do POST publico de review e do reenvio (spec 003, Q-01). Barram um
+    # script sem barrar um escritorio inteiro atras de um NAT so.
+    por-minuto: ${RATE_LIMIT_POR_MINUTO:1}
+    por-hora: ${RATE_LIMIT_POR_HORA:5}
+    # Ler X-Forwarded-For so faz sentido com um proxy de verdade na frente. Sem
+    # ele, o header e escrito por quem quiser e o limite vira decoracao.
+    confiar-em-forwarded-for: ${TRUST_FORWARDED_FOR:false}
+    # De quanto em quanto tempo o limitador esquece IPs antigos, em ms.
+    limpeza-ms: ${RATE_LIMIT_LIMPEZA_MS:600000}
+
+  reviews:
+    # Expurgo das reviews que nunca sairam de PENDING_EMAIL (spec 003 secao 4.2).
+    # De madrugada, uma vez por dia. Sao poucas linhas e o unico requisito e que
+    # nada passe dos 30 dias.
+    expurgo-cron: ${REVIEWS_EXPURGO_CRON:0 30 3 * * *}
+
+  seed:
+    # Desligado por padrao: popular o catalogo e uma decisao explicita de quem
+    # sobe o ambiente, nunca um efeito colateral do boot (spec secao 6).
+    enabled: ${SEED_ENABLED:false}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+# Swagger UI e o documento OpenAPI sao publicos (spec secao 5.3). O caminho curto
+# /swagger-ui.html redireciona para a UI, que e o endereco que a spec cita.
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    # As rotas na ordem em que os controllers as declaram, e nao em ordem
+    # alfabetica: publicas primeiro, curadoria depois.
+    tags-sorter: alpha
+    operations-sorter: method
+  api-docs:
+    path: /v3/api-docs
+
+# Apenas o health e exposto. /env e /configprops ficam fora desde o inicio
+# para que nenhuma variavel de ambiente vaze por endpoint (spec AC-24).
+# O health passa a incluir o check do Postgres (spec secao 5.3).
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+  health:
+    mail:
+      # O starter-mail acrescenta um health indicator que abre conexao com o SMTP
+      # a cada chamada de /actuator/health. Fica DESLIGADO: e-mail e o unico ponto
+      # desta aplicacao que depende de terceiro, e ele nao decide se a aplicacao
+      # esta de pe. Ligado, um SMTP fora do ar derrubaria o health para 503 - e
+      # com isso o healthcheck do compose, o `--wait` e o CI -, enquanto o
+      # catalogo inteiro continuaria respondendo. E o mesmo principio do AC-07,
+      # aplicado a um lugar que o plano nao previu.
+      enabled: false

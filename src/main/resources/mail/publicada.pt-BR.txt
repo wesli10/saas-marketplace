@@ -1,0 +1,10 @@
+Sua avaliacao de {0} esta publicada
+Ola, {1}.
+
+Sua avaliacao de {0} passou pela curadoria e ja aparece na pagina do produto:
+
+{2}
+
+Obrigado por escrever: e o que ajuda quem esta decidindo agora.
+
+Se quiser corrigir ou remover o que escreveu, responda esta mensagem.

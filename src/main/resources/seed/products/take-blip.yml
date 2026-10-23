@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: take-blip
+name: "Take Blip"
+category: automacao-de-whatsapp
+tagline_pt: "Plataforma brasileira de chatbot no WhatsApp com conta gratuita"
+tagline_en: "Brazilian WhatsApp chatbot platform with a free account"
+description_pt: >-
+  Plataforma brasileira de contatos inteligentes no WhatsApp e outros canais. A pagina de planos nao publica mensalidade fixa: mostra a conta gratuita com ate 2 atendentes, o excedente de conversa a R$ 1,40 por DAU adicional e R$ 150 por atendente extra, com o plano Enterprise sob consulta.
+description_en: >-
+  Brazilian platform for intelligent contacts on WhatsApp and other channels. The plans page publishes no fixed monthly fee: it shows a free account with up to 2 agents, conversation overage at R$ 1.40 per extra DAU and R$ 150 per additional agent, with the Enterprise plan quote-only.
+website_url: https://www.blip.ai
+logo_url: null
+pricing_model: FREEMIUM
+price_min: null
+price_currency: null
+price_period: null
+has_free_trial: false
+has_free_plan: true
+supported_languages: [pt]
+hq_country: BR
+source_note: "https://www.blip.ai/planos/ - coletado em 2026-08-26"
+integrations: [whatsapp]
+tags: [chatbot, automacao, atendimento]
+content:
+  "pt-BR":
+    pros:
+      - "Conta gratuita com ate 2 atendentes, sem prazo de validade"
+      - "Precos de excedente publicados por unidade"
+      - "Empresa brasileira, cobranca em reais"
+    cons:
+      - "A pagina nao publica mensalidade fixa dos planos pagos"
+      - "Plano Enterprise so sob consulta"
+      - "Custo final depende do volume de conversas, o que dificulta prever"
+    best_for: "Quem quer comecar de graca e escalar conversas no WhatsApp"
+    faq:
+      - question: "Tem plano gratuito?"
+        answer: "Sim, a conta gratuita cobre ate 2 atendentes com limite de conversas."
+      - question: "Quanto custa passar do limite?"
+        answer: "R$ 1,40 por DAU adicional e R$ 150 por atendente extra, segundo a pagina de planos."
+  "en":
+    pros:
+      - "Free account with up to 2 agents and no expiry"
+      - "Overage prices published per unit"
+      - "Brazilian company, billed in reais"
+    cons:
+      - "The page publishes no fixed monthly fee for paid plans"
+      - "Enterprise plan is quote-only"
+      - "Final cost depends on conversation volume, which makes it hard to forecast"
+    best_for: "Teams that want to start free and scale WhatsApp conversations"
+    faq:
+      - question: "Is there a free plan?"
+        answer: "Yes, the free account covers up to 2 agents with a conversation cap."
+      - question: "What does going over the limit cost?"
+        answer: "R$ 1.40 per extra DAU and R$ 150 per additional agent, according to the plans page."

@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: copy-ai
+name: "Copy.ai"
+category: geracao-de-conteudo
+tagline_pt: "Do chat de US$ 24 aos fluxos de go-to-market"
+tagline_en: "From a US$ 24 chat plan to go-to-market workflows"
+description_pt: >-
+  Plataforma de IA para conteudo e processos de go-to-market. A pagina publica o plano Chat a US$ 29/mes ou US$ 24/mes no anual, e depois salta para as faixas Growth, Expansion e Scale, entre US$ 1.000 e US$ 3.000/mes, com Enterprise sob consulta.
+description_en: >-
+  AI platform for content and go-to-market workflows. The page publishes the Chat plan at US$ 29/month or US$ 24/month annually, then jumps to the Growth, Expansion and Scale tiers between US$ 1,000 and US$ 3,000/month, with Enterprise quote-only.
+website_url: https://www.copy.ai
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 24.00
+price_currency: USD
+price_period: MONTH
+has_free_trial: false
+has_free_plan: false
+supported_languages: [en]
+hq_country: US
+source_note: "https://www.copy.ai/prices - coletado em 2026-08-26"
+integrations: []
+tags: [ia-generativa, copywriting, vendas]
+content:
+  "pt-BR":
+    pros:
+      - "Entrada barata para uso individual"
+      - "Faixas self-service publicadas ate US$ 3.000/mes"
+      - "Desconto no pagamento anual"
+    cons:
+      - "Salto grande entre o plano Chat e a faixa Growth"
+      - "A pagina nao menciona teste gratuito"
+      - "Precos em dolar"
+    best_for: "Quem comeca sozinho e pode crescer para fluxos de vendas"
+    faq:
+      - question: "Qual o plano mais barato?"
+        answer: "O Chat, a US$ 24/mes no anual ou US$ 29 no mensal."
+      - question: "Tem teste gratuito?"
+        answer: "A pagina de precos consultada nao menciona teste nem plano gratuito."
+  "en":
+    pros:
+      - "Cheap entry point for individual use"
+      - "Self-serve tiers published up to US$ 3,000/month"
+      - "Discount on annual billing"
+    cons:
+      - "Large gap between the Chat plan and the Growth tier"
+      - "The page does not mention a free trial"
+      - "Priced in US dollars"
+    best_for: "Individuals starting out who may grow into sales workflows"
+    faq:
+      - question: "What is the cheapest plan?"
+        answer: "Chat, at US$ 24/month annually or US$ 29 monthly."
+      - question: "Is there a free trial?"
+        answer: "The pricing page consulted mentions neither a trial nor a free plan."

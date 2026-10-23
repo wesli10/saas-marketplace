@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: writesonic
+name: "Writesonic"
+category: geracao-de-conteudo
+tagline_pt: "Conteudo e SEO com teste sem cartao de credito"
+tagline_en: "Content and SEO with a no-credit-card trial"
+description_pt: >-
+  Plataforma de IA para conteudo e SEO. A pagina publica quatro faixas: Starter a US$ 79/mes, Basic a US$ 199, Growth a US$ 399 - todas no anual - e Enterprise sob consulta. O teste comeca sem cartao de credito e nao ha plano gratuito permanente.
+description_en: >-
+  AI platform for content and SEO. The page publishes four tiers: Starter at US$ 79/month, Basic at US$ 199, Growth at US$ 399 - all on annual billing - and Enterprise quote-only. The trial starts with no credit card and there is no permanent free plan.
+website_url: https://writesonic.com
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 79.00
+price_currency: USD
+price_period: MONTH
+has_free_trial: true
+has_free_plan: false
+supported_languages: [en]
+hq_country: null
+source_note: "https://writesonic.com/pricing - coletado em 2026-08-26"
+integrations: []
+tags: [ia-generativa, copywriting, marketing]
+content:
+  "pt-BR":
+    pros:
+      - "Teste sem pedir cartao de credito"
+      - "Quatro faixas com preco e recursos comparados na pagina"
+      - "Economia declarada de US$ 240/ano no pagamento anual"
+    cons:
+      - "Entrada mais cara que a dos concorrentes diretos"
+      - "Sem plano gratuito permanente"
+      - "Precos em dolar"
+    best_for: "Times que produzem conteudo com foco em busca organica"
+    faq:
+      - question: "Precisa de cartao para testar?"
+        answer: "Nao: a pagina diz que o teste comeca sem cartao de credito."
+      - question: "Qual o plano de entrada?"
+        answer: "O Starter, a US$ 79/mes no anual."
+  "en":
+    pros:
+      - "Trial without a credit card"
+      - "Four tiers with prices and features compared on the page"
+      - "Stated saving of US$ 240/year on annual billing"
+    cons:
+      - "Higher entry price than direct competitors"
+      - "No permanent free plan"
+      - "Priced in US dollars"
+    best_for: "Teams producing content with an organic search focus"
+    faq:
+      - question: "Do I need a card to try it?"
+        answer: "No: the page states the trial starts with no credit card."
+      - question: "What is the entry plan?"
+        answer: "Starter, at US$ 79/month on annual billing."

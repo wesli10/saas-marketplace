@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: intercom
+name: "Intercom"
+category: atendimento-e-chatbots
+tagline_pt: "Atendimento com agente de IA cobrado por resolucao"
+tagline_en: "Support suite with an AI agent billed per resolution"
+description_pt: >-
+  Plataforma de atendimento cujos planos combinam assinatura por assento com cobranca por uso do agente de IA. O plano Essential sai por US$ 29 por assento/mes, e cada resolucao do Fin custa US$ 0,99 a parte. Ha teste de 14 dias sem cartao.
+description_en: >-
+  Support platform whose plans combine a per-seat subscription with usage-based billing for the AI agent. The Essential plan is US$ 29 per seat/month, and each Fin resolution costs US$ 0.99 on top. There is a 14-day trial with no credit card.
+website_url: https://www.intercom.com
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 29.00
+price_currency: USD
+price_period: MONTH
+has_free_trial: true
+has_free_plan: false
+supported_languages: [en]
+hq_country: US
+source_note: "https://www.intercom.com/pricing - coletado em 2026-08-26"
+integrations: []
+tags: [atendimento, chatbot, ia-generativa]
+content:
+  "pt-BR":
+    pros:
+      - "Teste de 14 dias sem cartao de credito"
+      - "Preco do agente de IA cobrado por resolucao, e nao por conversa"
+      - "Programa Early Stage com desconto para startups"
+    cons:
+      - "Precos em dolar"
+      - "A conta soma assinatura por assento com o uso do Fin, o que dificulta prever o valor final"
+      - "Sem plano gratuito permanente"
+    best_for: "Times que querem um agente de IA e aceitam pagar por resolucao"
+    faq:
+      - question: "Como o agente de IA e cobrado?"
+        answer: "US$ 0,99 por resolucao do Fin, somados ao valor por assento."
+      - question: "Tem teste gratuito?"
+        answer: "Sim, 14 dias sem cartao de credito."
+  "en":
+    pros:
+      - "14-day trial with no credit card"
+      - "AI agent billed per resolution rather than per conversation"
+      - "Early Stage program with startup discounts"
+    cons:
+      - "Priced in US dollars"
+      - "The bill mixes per-seat subscription with Fin usage, which makes the total harder to predict"
+      - "No permanent free plan"
+    best_for: "Teams that want an AI agent and accept paying per resolution"
+    faq:
+      - question: "How is the AI agent billed?"
+        answer: "US$ 0.99 per Fin resolution, on top of the per-seat price."
+      - question: "Is there a free trial?"
+        answer: "Yes, 14 days with no credit card."

@@ -1,0 +1,17 @@
+# O contexto do build so precisa de pom.xml e src/. Sem isto, o target/ (com um
+# jar de 23 MB) e o .git inteiro sobem para o daemon a cada build e invalidam
+# cache a toa.
+target/
+# O frontend tem Dockerfile proprio (web/Dockerfile); aqui ele so serviria
+# para mandar node_modules ao daemon e invalidar cache do backend.
+web/
+.git/
+.gitignore
+.env
+.env.*
+!.env.example
+specs/
+*.md
+.idea/
+.vscode/
+*.iml

@@ -1,0 +1,59 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: relevance-ai
+name: "Relevance AI"
+category: agentes-e-workflows
+tagline_pt: "Agentes de IA com preco so sob consulta"
+tagline_en: "AI agents with quote-only pricing"
+description_pt: >-
+  Plataforma de agentes de IA para times. A pagina de precos consultada exibe apenas a faixa Enterprise, com acoes customizadas, agentes e ferramentas ilimitados e gerente de conta dedicado; nao publica valor, moeda nem periodo, e direciona para falar com vendas.
+description_en: >-
+  AI agent platform for teams. The pricing page consulted shows only the Enterprise tier, with custom actions, unlimited agents and tools and a dedicated account manager; it publishes no amount, currency or period, and directs visitors to talk to sales.
+website_url: https://relevanceai.com
+logo_url: null
+pricing_model: CONTACT_SALES
+price_min: null
+price_currency: null
+price_period: null
+has_free_trial: false
+has_free_plan: false
+supported_languages: [en]
+hq_country: AU
+source_note: "https://relevanceai.com/pricing - coletado em 2026-08-26"
+integrations: []
+tags: [ia-generativa, workflow, automacao]
+content:
+  "pt-BR":
+    pros:
+      - "Faixa unica com agentes e ferramentas sem limite declarado"
+      - "Gerente de conta dedicado incluso na oferta Enterprise"
+    cons:
+      - "Preco nao publicado: so por contato comercial"
+      - "A pagina nao menciona teste nem plano gratuito"
+      - "Sem faixa de entrada para quem quer experimentar sozinho"
+    best_for: "Empresas que ja sabem o que querem automatizar e negociam contrato"
+    faq:
+      - question: "Qual o preco?"
+        answer: "A pagina consultada nao publica valor: a unica faixa exibida e Enterprise, sob consulta."
+      - question: "Tem plano gratuito?"
+        answer: "A pagina nao menciona plano gratuito nem teste."
+  "en":
+    pros:
+      - "Single tier with no declared cap on agents and tools"
+      - "Dedicated account manager included in the Enterprise offer"
+    cons:
+      - "Price not published: sales contact only"
+      - "The page mentions neither a trial nor a free plan"
+      - "No entry tier for self-service evaluation"
+    best_for: "Companies that already know what to automate and negotiate contracts"
+    faq:
+      - question: "What does it cost?"
+        answer: "The page consulted publishes no price: the only tier shown is Enterprise, quote-only."
+      - question: "Is there a free plan?"
+        answer: "The page mentions neither a free plan nor a trial."

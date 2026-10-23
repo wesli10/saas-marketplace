@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: elevenlabs
+name: "ElevenLabs"
+category: geracao-de-conteudo
+tagline_pt: "Voz sintetica por creditos, com faixa gratuita"
+tagline_en: "Synthetic voice billed in credits, with a free tier"
+description_pt: >-
+  Plataforma de geracao de voz e audio por IA, cobrada em creditos. A pagina publica um plano gratuito com 10 mil creditos por mes e as faixas pagas a partir de US$ 6/mes no Starter, subindo por Creator, Pro, Scale e Business, com Enterprise sob consulta.
+description_en: >-
+  AI voice and audio generation platform billed in credits. The page publishes a free plan with 10k credits per month and paid tiers starting at US$ 6/month on Starter, rising through Creator, Pro, Scale and Business, with Enterprise quote-only.
+website_url: https://elevenlabs.io
+logo_url: null
+pricing_model: FREEMIUM
+price_min: 6.00
+price_currency: USD
+price_period: MONTH
+has_free_trial: false
+has_free_plan: true
+supported_languages: [en]
+hq_country: US
+source_note: "https://elevenlabs.io/pricing - coletado em 2026-08-26"
+integrations: []
+tags: [ia-generativa, marketing]
+content:
+  "pt-BR":
+    pros:
+      - "Faixa gratuita permanente com 10 mil creditos por mes"
+      - "Entrada paga de US$ 6/mes, a mais barata desta categoria"
+      - "Seis faixas publicadas antes do Enterprise"
+    cons:
+      - "Cobranca por creditos exige acompanhar consumo"
+      - "Precos em dolar e sem impostos inclusos, segundo a propria pagina"
+      - "Sem teste dedicado alem do plano gratuito"
+    best_for: "Quem precisa de narracao e voz sintetica em escala"
+    faq:
+      - question: "Tem plano gratuito?"
+        answer: "Sim, com 10 mil creditos por mes."
+      - question: "Os precos incluem impostos?"
+        answer: "Nao: a pagina informa que os valores excluem impostos e taxas."
+  "en":
+    pros:
+      - "Permanent free tier with 10k credits per month"
+      - "US$ 6/month paid entry, the cheapest in this category"
+      - "Six published tiers before Enterprise"
+    cons:
+      - "Credit-based billing requires usage tracking"
+      - "Priced in US dollars and excluding taxes, per the page itself"
+      - "No dedicated trial beyond the free plan"
+    best_for: "Teams that need narration and synthetic voice at scale"
+    faq:
+      - question: "Is there a free plan?"
+        answer: "Yes, with 10k credits per month."
+      - question: "Do prices include taxes?"
+        answer: "No: the page states prices exclude all taxes, levies and duties."

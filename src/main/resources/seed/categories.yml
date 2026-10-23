@@ -1,0 +1,46 @@
+# Categorias do catalogo (spec 001, secao 6).
+# A raiz e as quatro subcategorias sao as que a spec nomeia; profundidade maxima
+# e 2, garantida por trigger no banco.
+- slug_pt: ia-e-automacao-para-pmes
+  slug_en: ai-and-automation-for-smbs
+  name_pt: IA e automação para PMEs
+  name_en: AI and automation for SMBs
+  description_pt: Ferramentas de inteligência artificial e automação para pequenas e médias empresas.
+  description_en: Artificial intelligence and automation tools for small and medium businesses.
+  sort_order: 0
+
+- slug_pt: atendimento-e-chatbots
+  slug_en: customer-support-and-chatbots
+  name_pt: Atendimento e chatbots
+  name_en: Customer support and chatbots
+  description_pt: Plataformas de atendimento ao cliente com chatbot e central multicanal.
+  description_en: Customer support platforms with chatbots and multichannel inboxes.
+  parent: ia-e-automacao-para-pmes
+  sort_order: 1
+
+- slug_pt: automacao-de-whatsapp
+  slug_en: whatsapp-automation
+  name_pt: Automação de WhatsApp
+  name_en: WhatsApp automation
+  description_pt: Ferramentas de disparo, fluxo e API oficial do WhatsApp.
+  description_en: Broadcast, flow and official WhatsApp API tooling.
+  parent: ia-e-automacao-para-pmes
+  sort_order: 2
+
+- slug_pt: geracao-de-conteudo
+  slug_en: content-generation
+  name_pt: Geração de conteúdo
+  name_en: Content generation
+  description_pt: Assistentes de escrita, imagem e vídeo para marketing e vendas.
+  description_en: Writing, image and video assistants for marketing and sales.
+  parent: ia-e-automacao-para-pmes
+  sort_order: 3
+
+- slug_pt: agentes-e-workflows
+  slug_en: agents-and-workflows
+  name_pt: Agentes e workflows
+  name_en: Agents and workflows
+  description_pt: Orquestração de agentes de IA e automação de processos entre sistemas.
+  description_en: AI agent orchestration and cross-system process automation.
+  parent: ia-e-automacao-para-pmes
+  sort_order: 4

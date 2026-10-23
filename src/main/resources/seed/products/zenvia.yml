@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: zenvia
+name: "Zenvia"
+category: automacao-de-whatsapp
+tagline_pt: "Multicanal brasileiro com plano gratuito e creditos por interacao"
+tagline_en: "Brazilian multichannel platform with a free tier and interaction credits"
+description_pt: >-
+  Plataforma brasileira de comunicacao multicanal. A pagina publica cinco faixas: Starter a R$ 0/mes com 100 creditos, Specialist a R$ 600/mes com 10 usuarios e 500 creditos, Expert a R$ 1.800 e Professional a R$ 3.900, com Enterprise sob consulta. Os pacotes de canal comecam em R$ 100/mes a parte.
+description_en: >-
+  Brazilian multichannel communication platform. The page publishes five tiers: Starter at R$ 0/month with 100 credits, Specialist at R$ 600/month with 10 users and 500 credits, Expert at R$ 1,800 and Professional at R$ 3,900, with Enterprise quote-only. Channel packages start at R$ 100/month on top.
+website_url: https://www.zenvia.com
+logo_url: null
+pricing_model: FREEMIUM
+price_min: 600.00
+price_currency: BRL
+price_period: MONTH
+has_free_trial: false
+has_free_plan: true
+supported_languages: [pt]
+hq_country: BR
+source_note: "https://www.zenvia.com/planos/ - coletado em 2026-08-26"
+integrations: [whatsapp]
+tags: [multicanal, automacao, marketing]
+content:
+  "pt-BR":
+    pros:
+      - "Plano Starter gratuito, com 100 creditos por mes"
+      - "Quatro faixas com preco publicado, so o Enterprise sob consulta"
+      - "Combina SMS, WhatsApp e e-mail no mesmo contrato"
+    cons:
+      - "Os pacotes de canal sao cobrados a parte, a partir de R$ 100/mes"
+      - "O salto do gratuito para o Specialist e de R$ 600/mes"
+      - "Creditos por interacao exigem acompanhar consumo"
+    best_for: "Empresas que falam com o cliente por varios canais alem do WhatsApp"
+    faq:
+      - question: "Tem plano gratuito?"
+        answer: "Sim, o Starter custa R$ 0/mes e inclui 100 creditos Interactionz."
+      - question: "O preco do plano cobre os canais?"
+        answer: "Nao: os pacotes de canal comecam em R$ 100/mes e sao somados ao plano."
+  "en":
+    pros:
+      - "Free Starter tier with 100 credits per month"
+      - "Four tiers with published prices; only Enterprise is quote-only"
+      - "Combines SMS, WhatsApp and email under one contract"
+    cons:
+      - "Channel packages are billed separately, from R$ 100/month"
+      - "The jump from free to Specialist is R$ 600/month"
+      - "Interaction credits require usage tracking"
+    best_for: "Companies talking to customers across several channels beyond WhatsApp"
+    faq:
+      - question: "Is there a free plan?"
+        answer: "Yes, Starter costs R$ 0/month and includes 100 Interactionz credits."
+      - question: "Does the plan price cover the channels?"
+        answer: "No: channel packages start at R$ 100/month and are added to the plan."

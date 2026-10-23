@@ -1,0 +1,31 @@
+# Build
+target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Worktrees de agentes: repositorios git embutidos, nunca versionados
+.claude/worktrees/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+
+# SO
+.DS_Store
+Thumbs.db

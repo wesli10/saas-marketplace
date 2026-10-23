@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: make
+name: "Make"
+category: agentes-e-workflows
+tagline_pt: "Automacao visual por creditos, a partir de US$ 9/mes"
+tagline_en: "Visual automation billed in credits, from US$ 9/month"
+description_pt: >-
+  Plataforma visual de automacao entre sistemas, cobrada por creditos de operacao. A pagina publica um plano gratuito com ate 1.000 creditos por mes e as faixas Core a US$ 9/mes, Pro a US$ 16 e Teams a US$ 29 para 10 mil creditos, com Enterprise sob consulta. O anual tem 15% ou mais de desconto.
+description_en: >-
+  Visual automation platform billed in operation credits. The page publishes a free plan with up to 1,000 credits per month and the Core tier at US$ 9/month, Pro at US$ 16 and Teams at US$ 29 for 10k credits, with Enterprise quote-only. Annual billing saves 15% or more.
+website_url: https://www.make.com
+logo_url: null
+pricing_model: FREEMIUM
+price_min: 9.00
+price_currency: USD
+price_period: MONTH
+has_free_trial: false
+has_free_plan: true
+supported_languages: [en]
+hq_country: CZ
+source_note: "https://www.make.com/en/pricing - coletado em 2026-08-26"
+integrations: [make]
+tags: [automacao, no-code, workflow]
+content:
+  "pt-BR":
+    pros:
+      - "Plano gratuito permanente com ate 1.000 creditos por mes"
+      - "Entrada paga de US$ 9/mes, a mais barata desta categoria"
+      - "Editor visual dos fluxos"
+    cons:
+      - "Cobranca por creditos exige acompanhar consumo"
+      - "Precos em dolar"
+      - "A pagina nao menciona teste dedicado alem do plano gratuito"
+    best_for: "Quem quer montar automacoes visualmente e pagar pouco no comeco"
+    faq:
+      - question: "Tem plano gratuito?"
+        answer: "Sim, com ate 1.000 creditos por mes."
+      - question: "Compensa pagar anual?"
+        answer: "A pagina indica economia de 15% ou mais no plano anual."
+  "en":
+    pros:
+      - "Permanent free plan with up to 1,000 credits per month"
+      - "US$ 9/month paid entry, the cheapest in this category"
+      - "Visual flow editor"
+    cons:
+      - "Credit-based billing requires usage tracking"
+      - "Priced in US dollars"
+      - "The page mentions no dedicated trial beyond the free plan"
+    best_for: "Teams that want to build automations visually and start cheap"
+    faq:
+      - question: "Is there a free plan?"
+        answer: "Yes, with up to 1,000 credits per month."
+      - question: "Is annual billing worth it?"
+        answer: "The page states a saving of 15% or more on annual plans."

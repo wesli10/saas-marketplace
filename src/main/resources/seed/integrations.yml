@@ -1,0 +1,14 @@
+# Integracoes que os produtos declaram. Nome proprio nao se traduz, por isso um
+# campo `name` so.
+- { slug: whatsapp, name: WhatsApp }
+- { slug: telegram, name: Telegram }
+- { slug: instagram, name: Instagram }
+- { slug: slack, name: Slack }
+- { slug: hubspot, name: HubSpot }
+- { slug: pipedrive, name: Pipedrive }
+- { slug: rd-station, name: RD Station }
+- { slug: google-sheets, name: Google Sheets }
+- { slug: google-calendar, name: Google Calendar }
+- { slug: zapier, name: Zapier }
+- { slug: make, name: Make }
+- { slug: shopify, name: Shopify }

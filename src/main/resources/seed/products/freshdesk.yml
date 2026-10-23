@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: freshdesk
+name: "Freshdesk"
+category: atendimento-e-chatbots
+tagline_pt: "Helpdesk por agente com entrada em US$ 19"
+tagline_en: "Per-agent helpdesk starting at US$ 19"
+description_pt: >-
+  Helpdesk da Freshworks com planos por agente. O Growth sai por US$ 19 por agente/mes no anual, o Pro por US$ 55 e o Enterprise por US$ 89. Quem cria conta recebe 14 dias com os recursos do plano Enterprise.
+description_en: >-
+  Freshworks helpdesk with per-agent plans. Growth is US$ 19 per agent/month on annual billing, Pro US$ 55 and Enterprise US$ 89. New accounts get 14 days with full Enterprise features.
+website_url: https://www.freshworks.com/freshdesk/
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 19.00
+price_currency: USD
+price_period: MONTH
+has_free_trial: true
+has_free_plan: false
+supported_languages: [en]
+hq_country: US
+source_note: "https://www.freshworks.com/freshdesk/pricing/ - coletado em 2026-08-26"
+integrations: []
+tags: [atendimento, multicanal]
+content:
+  "pt-BR":
+    pros:
+      - "Entrada barata entre os helpdesks comparados"
+      - "Teste de 14 dias ja com os recursos do plano Enterprise"
+      - "Tres faixas publicas de preco, sem 'fale com vendas' na base"
+    cons:
+      - "Precos em dolar"
+      - "A pagina cita um programa gratuito para 2 usuarios, mas nao detalha as condicoes"
+      - "Cobranca por agente"
+    best_for: "Times pequenos que querem helpdesk classico com custo de entrada baixo"
+    faq:
+      - question: "Qual o plano de entrada?"
+        answer: "O Growth, a US$ 19 por agente/mes no anual."
+      - question: "O teste da acesso a que?"
+        answer: "Aos recursos do plano Enterprise, por 14 dias."
+  "en":
+    pros:
+      - "Lowest entry price among the helpdesks compared here"
+      - "14-day trial with full Enterprise features"
+      - "Three public price tiers, with no contact-sales at the base"
+    cons:
+      - "Priced in US dollars"
+      - "The page mentions a free program for 2 users but does not detail the conditions"
+      - "Per-agent billing"
+    best_for: "Small teams that want a classic helpdesk with a low entry price"
+    faq:
+      - question: "What is the entry plan?"
+        answer: "Growth, at US$ 19 per agent/month on annual billing."
+      - question: "What does the trial include?"
+        answer: "Enterprise plan features, for 14 days."

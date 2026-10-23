@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: octadesk
+name: "Octadesk"
+category: atendimento-e-chatbots
+tagline_pt: "Atendimento cobrado por volume de conversas, nao por agente"
+tagline_en: "Support billed by conversation volume rather than per agent"
+description_pt: >-
+  Plataforma brasileira de atendimento cujos planos sao dimensionados por conversas, e nao por numero de agentes. O plano One custa R$ 2.499/mes para 3.000 conversas e o Flow R$ 4.399/mes para 5.500; o Nexus fica sob consulta. Todos exigem a consultoria de onboarding, cobrada a parte.
+description_en: >-
+  Brazilian support platform whose plans are sized by conversation volume rather than agent count. The One plan costs R$ 2,499/month for 3,000 conversations and Flow R$ 4,399/month for 5,500; Nexus is quote-only. Every plan requires onboarding consulting, charged separately.
+website_url: https://octadesk.com
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 2499.00
+price_currency: BRL
+price_period: MONTH
+has_free_trial: false
+has_free_plan: false
+supported_languages: [pt]
+hq_country: BR
+source_note: "https://octadesk.com/precos/ - coletado em 2026-08-26"
+integrations: [whatsapp]
+tags: [atendimento, chatbot, multicanal]
+content:
+  "pt-BR":
+    pros:
+      - "Cobranca por conversas: aumentar o time nao aumenta a mensalidade"
+      - "Valores dos dois primeiros planos publicados na pagina"
+      - "Empresa brasileira, cobranca em reais"
+    cons:
+      - "Piso alto: o plano de entrada custa R$ 2.499/mes"
+      - "Onboarding obrigatorio com valor sob consulta"
+      - "A pagina nao menciona teste nem plano gratuito"
+    best_for: "Operacoes com muitos atendentes e volume de conversas previsivel"
+    faq:
+      - question: "Como e a cobranca?"
+        answer: "Por faixa de conversas mensais, e nao por agente."
+      - question: "Tem custo de implantacao?"
+        answer: "Sim, a consultoria de onboarding e obrigatoria e o valor fica sob consulta."
+  "en":
+    pros:
+      - "Billed by conversations, so growing the team does not raise the bill"
+      - "Prices for the first two plans published on the page"
+      - "Brazilian company, billed in reais"
+    cons:
+      - "High entry point: the base plan costs R$ 2,499/month"
+      - "Mandatory onboarding with quote-only pricing"
+      - "The page mentions neither a trial nor a free plan"
+    best_for: "Operations with many agents and predictable conversation volume"
+    faq:
+      - question: "How is it billed?"
+        answer: "By monthly conversation tier, not per agent."
+      - question: "Is there an onboarding fee?"
+        answer: "Yes, onboarding consulting is mandatory and quote-only."

@@ -1,0 +1,10 @@
+Confirme sua avaliacao de {0}
+Ola, {1}.
+
+Voce escreveu uma avaliacao de {0}. Falta um passo: confirmar que este endereco de e-mail e seu.
+
+{2}
+
+O link vale por 48 horas e serve uma vez so. Depois da confirmacao, a avaliacao passa por curadoria antes de aparecer na pagina do produto - ela nao fica visivel imediatamente.
+
+Se nao foi voce quem escreveu, e so ignorar esta mensagem. Sem confirmacao a avaliacao nao e publicada, e o registro e apagado em 30 dias.

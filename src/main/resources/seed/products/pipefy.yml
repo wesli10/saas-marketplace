@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: pipefy
+name: "Pipefy"
+category: agentes-e-workflows
+tagline_pt: "Processos e workflows com plano inicial gratuito"
+tagline_en: "Processes and workflows with a free starter plan"
+description_pt: >-
+  Plataforma brasileira de gestao de processos e workflows. A pagina publica o plano Starter gratuito, sem cartao de credito, com ate 5 processos e ate 10 usuarios; os planos Business e Enterprise nao tem valor publicado e exigem contato comercial. Ha oferta declarada de ate 90% de desconto para empresas de 11 a 200 funcionarios.
+description_en: >-
+  Brazilian process and workflow management platform. The page publishes a free Starter plan with no credit card, up to 5 processes and up to 10 users; the Business and Enterprise plans have no published price and require contacting sales. The page states an SMB offer of up to 90% off for companies with 11 to 200 employees.
+website_url: https://www.pipefy.com
+logo_url: null
+pricing_model: FREEMIUM
+price_min: null
+price_currency: null
+price_period: null
+has_free_trial: false
+has_free_plan: true
+supported_languages: [en, pt]
+hq_country: BR
+source_note: "https://www.pipefy.com/pricing/ - coletado em 2026-08-26"
+integrations: []
+tags: [workflow, automacao, no-code]
+content:
+  "pt-BR":
+    pros:
+      - "Plano Starter gratuito, sem cartao de credito"
+      - "Empresa brasileira"
+      - "Desconto declarado de ate 90% para PMEs de 11 a 200 funcionarios"
+    cons:
+      - "Os planos pagos nao tem preco publicado: so por contato comercial"
+      - "O gratuito limita a 5 processos e 10 usuarios"
+      - "A pagina nao menciona teste dos planos pagos"
+    best_for: "PMEs que querem organizar processos antes de falar com vendas"
+    faq:
+      - question: "Quanto custa o plano pago?"
+        answer: "A pagina nao publica o valor: os planos Business e Enterprise pedem contato com vendas."
+      - question: "O plano gratuito tem prazo?"
+        answer: "A pagina descreve o Starter como gratuito, com limite de 5 processos e 10 usuarios."
+  "en":
+    pros:
+      - "Free Starter plan with no credit card"
+      - "Brazilian company"
+      - "Stated discount of up to 90% for SMBs with 11 to 200 employees"
+    cons:
+      - "Paid plans have no published price: sales contact only"
+      - "The free plan caps at 5 processes and 10 users"
+      - "The page does not mention a trial of the paid plans"
+    best_for: "SMBs that want to organise processes before talking to sales"
+    faq:
+      - question: "What does the paid plan cost?"
+        answer: "The page does not publish it: Business and Enterprise require contacting sales."
+      - question: "Does the free plan expire?"
+        answer: "The page describes Starter as free, capped at 5 processes and 10 users."

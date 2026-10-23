@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: wati
+name: "Wati"
+category: automacao-de-whatsapp
+tagline_pt: "Caixa de entrada e automacao na API oficial do WhatsApp"
+tagline_en: "Shared inbox and automation on the official WhatsApp API"
+description_pt: >-
+  Plataforma de atendimento e automacao sobre a API oficial do WhatsApp. A pagina publica o plano Growth a partir de INR 999/mes e o Pro a INR 1.999/mes, com o Business sob consulta, alem de uma opcao avulsa de INR 999 com creditos de mensagem. Ha teste de 7 dias sem taxa de setup.
+description_en: >-
+  Support and automation platform on top of the official WhatsApp API. The page publishes the Growth plan from INR 999/month and Pro at INR 1,999/month, with Business quote-only, plus a pay-as-you-go option of INR 999 with message credits. There is a 7-day trial with no setup fee.
+website_url: https://www.wati.io
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 999.00
+price_currency: INR
+price_period: MONTH
+has_free_trial: true
+has_free_plan: false
+supported_languages: [en]
+hq_country: null
+source_note: "https://www.wati.io/pricing/ - coletado em 2026-08-26"
+integrations: [whatsapp]
+tags: [automacao, atendimento, chatbot]
+content:
+  "pt-BR":
+    pros:
+      - "Teste de 7 dias sem taxa de setup"
+      - "Opcao avulsa com creditos, sem assinatura"
+      - "Precos publicados para os dois primeiros planos"
+    cons:
+      - "Precos em rupias, o que exige conversao para orcar no Brasil"
+      - "Sem plano gratuito permanente"
+      - "Plano Business sob consulta"
+    best_for: "Quem ja tem a API oficial e quer uma caixa de entrada compartilhada"
+    faq:
+      - question: "Quanto dura o teste?"
+        answer: "7 dias, sem taxa de setup, segundo a pagina de precos."
+      - question: "Em que moeda o preco e cobrado?"
+        answer: "A pagina consultada exibe os valores em rupias indianas."
+  "en":
+    pros:
+      - "7-day trial with zero setup fees"
+      - "Pay-as-you-go option with credits, no subscription"
+      - "Published prices for the first two plans"
+    cons:
+      - "Prices in Indian rupees, which requires conversion to budget elsewhere"
+      - "No permanent free plan"
+      - "Business plan is quote-only"
+    best_for: "Teams already on the official API that want a shared inbox"
+    faq:
+      - question: "How long is the trial?"
+        answer: "7 days with no setup fee, according to the pricing page."
+      - question: "Which currency is charged?"
+        answer: "The page consulted displays values in Indian rupees."

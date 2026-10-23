@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: zapier
+name: "Zapier"
+category: agentes-e-workflows
+tagline_pt: "Automacao entre aplicativos cobrada por tarefa, com plano gratuito"
+tagline_en: "Cross-app automation billed by task, with a free plan"
+description_pt: >-
+  Servico de automacao entre aplicativos. A pagina publica um plano gratuito com 100 tarefas por mes e fluxos de dois passos, e o Professional a US$ 19,99/mes no anual - US$ 29,99 no mensal -, alem das faixas Team e Enterprise. Contas novas recebem 14 dias de teste do Professional sem cartao.
+description_en: >-
+  Cross-app automation service. The page publishes a free plan with 100 tasks per month and two-step workflows, and Professional at US$ 19.99/month annually - US$ 29.99 monthly - plus the Team and Enterprise tiers. New accounts get a 14-day Professional trial with no credit card.
+website_url: https://zapier.com
+logo_url: null
+pricing_model: FREEMIUM
+price_min: 19.99
+price_currency: USD
+price_period: MONTH
+has_free_trial: true
+has_free_plan: true
+supported_languages: [en]
+hq_country: US
+source_note: "https://zapier.com/pricing - coletado em 2026-08-26"
+integrations: [zapier]
+tags: [automacao, no-code, workflow, integracao]
+content:
+  "pt-BR":
+    pros:
+      - "Plano gratuito permanente com 100 tarefas por mes"
+      - "Teste de 14 dias do plano Professional, sem cartao"
+      - "Cobranca por tarefa executada, e nao por usuario"
+    cons:
+      - "Precos em dolar"
+      - "O plano gratuito limita fluxos a dois passos"
+      - "Custo cresce com o volume de execucoes"
+    best_for: "Quem quer ligar sistemas sem escrever codigo"
+    faq:
+      - question: "Tem plano gratuito?"
+        answer: "Sim, com 100 tarefas por mes e fluxos de dois passos."
+      - question: "Qual o plano pago mais barato?"
+        answer: "O Professional, a US$ 19,99/mes no anual."
+  "en":
+    pros:
+      - "Permanent free plan with 100 tasks per month"
+      - "14-day Professional trial with no credit card"
+      - "Billed per task executed rather than per user"
+    cons:
+      - "Priced in US dollars"
+      - "The free plan caps workflows at two steps"
+      - "Cost grows with execution volume"
+    best_for: "Teams connecting systems without writing code"
+    faq:
+      - question: "Is there a free plan?"
+        answer: "Yes, with 100 tasks per month and two-step workflows."
+      - question: "What is the cheapest paid plan?"
+        answer: "Professional, at US$ 19.99/month on annual billing."

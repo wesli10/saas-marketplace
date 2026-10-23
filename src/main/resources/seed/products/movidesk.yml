@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: movidesk
+name: "Movidesk"
+category: atendimento-e-chatbots
+tagline_pt: "Service desk brasileiro com minimo de 5 agentes"
+tagline_en: "Brazilian service desk with a 5-agent minimum"
+description_pt: >-
+  Plataforma brasileira de atendimento e service desk. A pagina de precos indica R$ 199,90 por agente/mes com contratacao minima de 5 agentes, mais consultoria de implantacao a partir de R$ 1.999,00 em ate 3 parcelas. O teste gratuito e de 7 dias.
+description_en: >-
+  Brazilian customer service and service desk platform. The pricing page lists R$ 199.90 per agent/month with a 5-agent minimum, plus onboarding consulting from R$ 1,999.00, payable in up to 3 instalments. The free trial lasts 7 days.
+website_url: https://www.movidesk.com
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 199.90
+price_currency: BRL
+price_period: MONTH
+has_free_trial: true
+has_free_plan: false
+supported_languages: [pt]
+hq_country: BR
+source_note: "https://www.movidesk.com/precos/ - coletado em 2026-08-26"
+integrations: []
+tags: [atendimento, multicanal]
+content:
+  "pt-BR":
+    pros:
+      - "Empresa e suporte brasileiros, com cobranca em reais"
+      - "Preco por agente publicado na propria pagina"
+      - "Teste gratuito de 7 dias"
+    cons:
+      - "Exige no minimo 5 agentes, o que eleva o piso real da conta"
+      - "Consultoria de implantacao cobrada a parte, a partir de R$ 1.999,00"
+      - "Sem plano gratuito"
+    best_for: "Times de suporte no Brasil com pelo menos cinco atendentes"
+    faq:
+      - question: "Qual o custo minimo?"
+        answer: "R$ 199,90 por agente/mes com 5 agentes no minimo, mais a consultoria de implantacao."
+      - question: "Quanto dura o teste?"
+        answer: "7 dias, segundo a pagina de precos."
+  "en":
+    pros:
+      - "Brazilian company and support, billed in reais"
+      - "Per-agent price published on the pricing page itself"
+      - "7-day free trial"
+    cons:
+      - "Requires at least 5 agents, which raises the real entry cost"
+      - "Onboarding consulting charged separately, from R$ 1,999.00"
+      - "No free plan"
+    best_for: "Support teams in Brazil with at least five agents"
+    faq:
+      - question: "What is the minimum cost?"
+        answer: "R$ 199.90 per agent/month with a 5-agent minimum, plus onboarding consulting."
+      - question: "How long is the trial?"
+        answer: "7 days, according to the pricing page."

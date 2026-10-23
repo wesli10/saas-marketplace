@@ -1,0 +1,220 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: saasfinder
+      POSTGRES_USER: ${DB_USER:?defina DB_USER no .env}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?defina DB_PASSWORD no .env}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  app:
+    build:
+      context: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_URL: ${DB_URL:-jdbc:postgresql://db:5432/saasfinder}
+      DB_USER: ${DB_USER:?defina DB_USER no .env}
+      DB_PASSWORD: ${DB_PASSWORD:?defina DB_PASSWORD no .env}
+      ADMIN_USER: ${ADMIN_USER:?defina ADMIN_USER no .env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?defina ADMIN_PASSWORD no .env}
+      SEED_ENABLED: ${SEED_ENABLED:-false}
+      APP_DEFAULT_LOCALE: ${APP_DEFAULT_LOCALE:-pt-BR}
+      # De onde sai o link de confirmacao da review (spec 003 secao 5.3).
+      SITE_URL: ${SITE_URL:-http://localhost:3000}
+      MAIL_HOST: ${MAIL_HOST:-mailpit}
+      MAIL_PORT: ${MAIL_PORT:-1025}
+      MAIL_USER: ${MAIL_USER:-}
+      MAIL_PASSWORD: ${MAIL_PASSWORD:-}
+      MAIL_FROM: ${MAIL_FROM:-reviews@localhost}
+    ports:
+      - "${APP_PORT:-8080}:8080"
+    healthcheck:
+      # `--wait` so espera de verdade quem tem healthcheck. Sem isto o web (e o
+      # e2e) subiam contra uma API que ainda estava bootando.
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/actuator/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  web:
+    build:
+      context: ./web
+    depends_on:
+      - app
+    environment:
+      # Endereco interno do compose: a renderizacao acontece no servidor, entao
+      # o navegador do visitante nunca ve esta URL (plano DT-03).
+      API_BASE_URL: ${API_BASE_URL:-http://app:8080}
+      # Esta, ao contrario da de cima, e publica de proposito: sai no HTML, na
+      # canonica e no hreflang (AC-06).
+      SITE_URL: ${SITE_URL:-http://localhost:3000}
+      # Compromisso publico da politica de reviews (spec 003 secao 7.1): o
+      # endereco de contestacao e o prazo de resposta. Quem os assume e quem
+      # sobe o ambiente - por isso vem daqui, e nao do codigo.
+      REVIEWS_CONTATO: ${REVIEWS_CONTATO:-contestacao@example.com}
+      REVIEWS_PRAZO_DIAS: ${REVIEWS_PRAZO_DIAS:-10}
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    healthcheck:
+      # O node ja tem fetch embutido; a imagem nao carrega curl nem wget so
+      # para isto. Sem healthcheck o `--wait` daria o web como pronto assim que
+      # o processo sobe, antes de ele aceitar requisicao.
+      test:
+        ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  # Caixa de entrada local (spec 003 secao 5.3). Nada sai da maquina: tudo o que
+  # a app manda para o SMTP para aqui, visivel em http://localhost:8025. E a
+  # partir da T10 o e2e le o link de confirmacao pela API dele.
+  #
+  # O `app` nao declara depends_on daqui de proposito. Falha de envio nao pode
+  # derrubar nada (AC-07), e um depends_on obrigaria a subir o Mailpit em todo
+  # ambiente - inclusive naqueles em que o SMTP e outro.
+  mailpit:
+    image: axllent/mailpit:v1.21
+    environment:
+      # Caixa de desenvolvimento: aceita qualquer credencial e conexao sem TLS,
+      # que e o que o `app` faz quando MAIL_USER e MAIL_PASSWORD estao vazios.
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+    ports:
+      - "${MAILPIT_SMTP_PORT:-1025}:1025"
+      - "${MAILPIT_UI_PORT:-8025}:8025"
+    healthcheck:
+      # A imagem e distroless: nao ha curl nem wget dentro dela. O proprio
+      # binario responde pelo readyz.
+      test: ["CMD", "/mailpit", "readyz"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 5s
+    profiles:
+      # `docker compose up` continua subindo db + app + web e mais nada
+      # (risco R-05). O Mailpit entra com `--profile dev`.
+      - dev
+      # E tambem com o perfil de escrita, que precisa dele para ler o link de
+      # confirmacao (plano DT-11).
+      - e2e-escrita
+
+  # Mesma imagem do web, com a API apontada para um endereco morto. Existe so
+  # para os testes de resiliencia (spec 002 secao 7.2): derrubar o `app`
+  # compartilhado mataria os outros workers do Playwright, que rodam em
+  # paralelo. A porta 9 e a "discard" - fecha a conexao na hora, sem esperar
+  # timeout.
+  web-sem-api:
+    build:
+      context: ./web
+    environment:
+      API_BASE_URL: http://127.0.0.1:9
+      API_TIMEOUT_MS: 1000
+    ports:
+      - "${WEB_SEM_API_PORT:-3001}:3000"
+    profiles:
+      # Fora do `docker compose up` normal: quem sobe e quem vai rodar o e2e.
+      - e2e
+
+  # --- Instancia de escrita (spec 003 secao 8, plano DT-11) ---
+  #
+  # A constituicao secao 6 proibe a suite compartilhada de escrever, e a partir
+  # da T11 os testes escrevem: uma review publicada muda a media que outro teste
+  # afirma, e os workers rodam em paralelo. Em vez de um mutex, uma segunda
+  # instancia inteira - banco, API e frontend proprios.
+  #
+  # Opt-in: `docker compose up` continua subindo db + app + web (risco R-05).
+  # Sobe com `--profile e2e-escrita`, e e o que a suite completa faz.
+  db-escrita:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: saasfinder
+      POSTGRES_USER: ${DB_USER:?defina DB_USER no .env}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?defina DB_PASSWORD no .env}
+    # Sem volume nomeado, de proposito: este banco e descartavel, e comecar
+    # limpo a cada `up` e uma propriedade, nao um efeito colateral.
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    profiles:
+      - e2e-escrita
+
+  app-escrita:
+    build:
+      context: .
+    depends_on:
+      db-escrita:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:postgresql://db-escrita:5432/saasfinder
+      DB_USER: ${DB_USER:?defina DB_USER no .env}
+      DB_PASSWORD: ${DB_PASSWORD:?defina DB_PASSWORD no .env}
+      ADMIN_USER: ${ADMIN_USER:?defina ADMIN_USER no .env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?defina ADMIN_PASSWORD no .env}
+      # Com catalogo: nao ha o que avaliar num banco vazio.
+      SEED_ENABLED: "true"
+      APP_DEFAULT_LOCALE: ${APP_DEFAULT_LOCALE:-pt-BR}
+      # O link do e-mail precisa abrir no NAVEGADOR do Playwright, que roda no
+      # host - por isso o endereco publico do web-escrita, e nao o nome interno.
+      SITE_URL: http://localhost:${WEB_ESCRITA_PORT:-3002}
+      MAIL_HOST: mailpit
+      MAIL_PORT: 1025
+      MAIL_FROM: ${MAIL_FROM:-reviews@localhost}
+      # O limite de producao e 1 por minuto por IP, e todos os testes chegam do
+      # mesmo IP: com ele ligado, o segundo caso da suite tomaria 429 e a
+      # execucao viraria loteria. Quem exercita o limite de verdade sao os testes
+      # de integracao do backend, com os valores de producao.
+      RATE_LIMIT_POR_MINUTO: "1000"
+      RATE_LIMIT_POR_HORA: "10000"
+    ports:
+      - "${APP_ESCRITA_PORT:-8081}:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/actuator/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    profiles:
+      - e2e-escrita
+
+  web-escrita:
+    build:
+      context: ./web
+    depends_on:
+      - app-escrita
+    environment:
+      API_BASE_URL: http://app-escrita:8080
+      SITE_URL: http://localhost:${WEB_ESCRITA_PORT:-3002}
+      REVIEWS_CONTATO: ${REVIEWS_CONTATO:-contestacao@example.com}
+      REVIEWS_PRAZO_DIAS: ${REVIEWS_PRAZO_DIAS:-10}
+    ports:
+      - "${WEB_ESCRITA_PORT:-3002}:3000"
+    healthcheck:
+      test:
+        ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    profiles:
+      - e2e-escrita
+
+volumes:
+  pgdata:

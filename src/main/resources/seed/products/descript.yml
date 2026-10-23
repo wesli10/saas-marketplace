@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: descript
+name: "Descript"
+category: geracao-de-conteudo
+tagline_pt: "Edicao de video e audio pelo texto, com plano gratuito"
+tagline_en: "Text-based video and audio editing, with a free plan"
+description_pt: >-
+  Editor de video e audio que trabalha a partir da transcricao do texto. A pagina publica um plano gratuito permanente e as faixas pagas Hobbyist a US$ 16/mes, Creator a US$ 24 e Business a US$ 50, todas no anual, com Enterprise sob consulta.
+description_en: >-
+  Video and audio editor that works from the text transcript. The page publishes a permanent free plan and the paid tiers Hobbyist at US$ 16/month, Creator at US$ 24 and Business at US$ 50, all annual, with Enterprise quote-only.
+website_url: https://www.descript.com
+logo_url: null
+pricing_model: FREEMIUM
+price_min: 16.00
+price_currency: USD
+price_period: MONTH
+has_free_trial: false
+has_free_plan: true
+supported_languages: [en]
+hq_country: US
+source_note: "https://www.descript.com/pricing - coletado em 2026-08-26"
+integrations: []
+tags: [ia-generativa, marketing]
+content:
+  "pt-BR":
+    pros:
+      - "Plano gratuito permanente, sem cartao de credito"
+      - "Entrada paga barata, a US$ 16/mes no anual"
+      - "Quatro faixas com precos publicados"
+    cons:
+      - "Precos em dolar"
+      - "Interface e material de apoio em ingles"
+      - "Plano Enterprise sob consulta"
+    best_for: "Quem produz video e podcast e prefere editar pelo texto"
+    faq:
+      - question: "Tem plano gratuito?"
+        answer: "Sim, um plano gratuito permanente, sem pedir cartao."
+      - question: "Qual o plano pago mais barato?"
+        answer: "O Hobbyist, a US$ 16/mes no anual."
+  "en":
+    pros:
+      - "Permanent free plan with no credit card"
+      - "Cheap paid entry at US$ 16/month annually"
+      - "Four tiers with published prices"
+    cons:
+      - "Priced in US dollars"
+      - "Interface and support material in English"
+      - "Enterprise plan is quote-only"
+    best_for: "Video and podcast creators who prefer editing from the transcript"
+    faq:
+      - question: "Is there a free plan?"
+        answer: "Yes, a permanent free plan that does not ask for a card."
+      - question: "What is the cheapest paid plan?"
+        answer: "Hobbyist, at US$ 16/month on annual billing."

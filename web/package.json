@@ -1,0 +1,51 @@
+{
+  "name": "marketplace-saas-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "check:testids": "node scripts/check-testids.mjs",
+    "check:e2e": "node scripts/check-e2e-isolation.mjs",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "e2e:smoke": "E2E_SMOKE=1 playwright test --project=chromium --grep @smoke",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm run check:testids && npm run check:e2e && npm run check:seed && npm run test",
+    "e2e:isolamento": "playwright test --project=chromium --workers=1 --repeat-each=2",
+    "typegen": "next typegen",
+    "api:types": "node scripts/gerar-tipos.mjs",
+    "check:seed": "node scripts/check-seed-leak.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.62.1",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.3",
+    "eslint-config-prettier": "^10.1.8",
+    "jsdom": "^30.0.1",
+    "openapi-typescript": "^7.13.0",
+    "prettier": "^3.9.6",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^4.1.11"
+  }
+}

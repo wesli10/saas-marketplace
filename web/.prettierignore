@@ -1,0 +1,6 @@
+.next
+node_modules
+package-lock.json
+# Gerado a partir do OpenAPI da API (T06). Formatar aqui produziria diff
+# permanente contra o que o gerador escreve.
+src/lib/api/types.gen.ts

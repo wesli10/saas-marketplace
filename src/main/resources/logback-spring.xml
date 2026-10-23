@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Log estruturado (plano DT-11, AC-24).
+
+  Duas saidas para o mesmo appender CONSOLE, escolhidas pelo profile:
+  - `local`: padrao legivel do proprio Spring Boot, para quem esta com o terminal aberto;
+  - qualquer outro profile (inclusive o default, que e o dos testes e o do container):
+    JSON de uma linha, que e o formato que o agregador de logs consegue indexar.
+
+  Nada aqui liga DEBUG nem imprime propriedades do ambiente: o segredo nao e mascarado
+  depois, ele simplesmente nunca chega ao log. LogRedactionIT guarda essa promessa.
+-->
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <springProfile name="local">
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+                <charset>${CONSOLE_LOG_CHARSET}</charset>
+            </encoder>
+        </appender>
+    </springProfile>
+
+    <springProfile name="!local">
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                <!--
+                  Os nomes default do encoder sao `@timestamp` e `logger_name`. Renomeados
+                  para o contrato que o AC-24 verifica (timestamp, level, logger, message)
+                  e sem `@version`/`level_value`, que nao dizem nada a quem le o log.
+                -->
+                <fieldNames>
+                    <timestamp>timestamp</timestamp>
+                    <logger>logger</logger>
+                    <thread>thread</thread>
+                    <version>[ignore]</version>
+                    <levelValue>[ignore]</levelValue>
+                </fieldNames>
+                <timeZone>UTC</timeZone>
+            </encoder>
+        </appender>
+    </springProfile>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

@@ -1,0 +1,10 @@
+Your review of {0} is live
+Hello, {1}.
+
+Your review of {0} went through curation and is now on the product page:
+
+{2}
+
+Thank you for writing it - it is what helps whoever is deciding right now.
+
+If you want to correct or remove what you wrote, just reply to this message.

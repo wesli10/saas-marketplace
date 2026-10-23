@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/*
+ * O "noscript invertido": o botao de aplicar filtros esta sempre no HTML, para
+ * a versao sem JavaScript funcionar, e some quando o script marca o formulario
+ * (FiltroAutoSubmit). Esconde-lo no servidor quebraria quem nao tem JS.
+ */
+form[data-js="ligado"] [data-oculto-com-js] {
+  display: none;
+}

@@ -1,0 +1,69 @@
+# Provedores de e-mail gratuito (spec 003, secao 4.5).
+#
+# Review de dominio desta lista e ACEITA, e aparece sem o selo de verificada:
+# bloquear excluiria a PME que roda no Gmail, que e exatamente o publico do
+# catalogo. O selo diz "esta pessoa confirmou um e-mail em @acme.com.br", e nao
+# "esta review e melhor".
+#
+# Dado que muda com o tempo mora em arquivo versionado, como o seed - nunca em
+# constante no codigo. Um dominio por linha, em minusculas. Linha vazia e linha
+# comecando com # sao ignoradas.
+#
+# Fonte: paginas de cadastro dos proprios provedores, conferidas em 2026-08-27.
+# Criterio de entrada: qualquer pessoa cria um endereco sem vinculo com uma
+# organizacao. Provedor pago de dominio proprio (Google Workspace, Microsoft 365)
+# NAO entra: ali o dominio e da empresa.
+
+# Google - 2026-08-27
+gmail.com
+googlemail.com
+
+# Microsoft - 2026-08-27
+outlook.com
+outlook.com.br
+hotmail.com
+hotmail.com.br
+live.com
+msn.com
+
+# Yahoo - 2026-08-27
+yahoo.com
+yahoo.com.br
+ymail.com
+
+# Apple - 2026-08-27
+icloud.com
+me.com
+mac.com
+
+# Provedores brasileiros - 2026-08-27
+bol.com.br
+uol.com.br
+terra.com.br
+ig.com.br
+globo.com
+oi.com.br
+zipmail.com.br
+
+# Focados em privacidade, abertos a qualquer pessoa - 2026-08-27
+protonmail.com
+proton.me
+tutanota.com
+tuta.com
+zoho.com
+gmx.com
+gmx.net
+mail.com
+aol.com
+yandex.com
+yandex.ru
+
+# Descartaveis - 2026-08-27
+mailinator.com
+guerrillamail.com
+10minutemail.com
+tempmail.com
+temp-mail.org
+yopmail.com
+trashmail.com
+sharklasers.com

@@ -1,0 +1,10 @@
+Confirm your review of {0}
+Hello, {1}.
+
+You wrote a review of {0}. One step is missing: confirm that this email address is yours.
+
+{2}
+
+The link is valid for 48 hours and works only once. After you confirm, the review goes through curation before it shows up on the product page - it does not become visible right away.
+
+If this was not you, please ignore this message. Without confirmation the review is never published, and the record is deleted after 30 days.

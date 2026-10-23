@@ -1,0 +1,61 @@
+# Produto real do catalogo (spec 001, secao 6 - tarefa 001-T26).
+#
+# Preco, moeda, periodo, teste e plano gratuito vieram da pagina de pricing
+# indicada em source_note, lida na data ali registrada. Onde a pagina nao publica
+# o dado, o campo fica nulo - nunca preenchido de cabeca (constituicao 7.5).
+#
+# supported_languages registra o idioma da pagina oficial consultada, que e a
+# evidencia que temos; nao e uma lista verificada de locales de interface.
+slug: zendesk
+name: "Zendesk"
+category: atendimento-e-chatbots
+tagline_pt: "Central de atendimento com planos por agente e preco em reais"
+tagline_en: "Support desk priced per agent, with a Brazilian price list"
+description_pt: >-
+  Plataforma de atendimento ao cliente com planos cobrados por agente. A pagina brasileira publica os valores em reais: o plano Support Team sai por R$ 135 por agente/mes no anual, e a linha Suite comeca em R$ 359 por agente/mes. O anual tem 20% de desconto sobre o mensal e ha teste de 14 dias.
+description_en: >-
+  Customer support platform billed per agent. The Brazilian pricing page lists values in reais: the Support Team plan is R$ 135 per agent/month on annual billing, and the Suite line starts at R$ 359 per agent/month. Annual billing carries a 20% discount and there is a 14-day trial.
+website_url: https://www.zendesk.com.br
+logo_url: null
+pricing_model: SUBSCRIPTION
+price_min: 135.00
+price_currency: BRL
+price_period: MONTH
+has_free_trial: true
+has_free_plan: false
+supported_languages: [pt, en]
+hq_country: US
+source_note: "https://www.zendesk.com.br/pricing/ - coletado em 2026-08-26"
+integrations: []
+tags: [atendimento, chatbot, multicanal]
+content:
+  "pt-BR":
+    pros:
+      - "Preco publicado em reais, sem conversao de moeda"
+      - "Teste de 14 dias com os recursos do plano Suite Professional"
+      - "20% de desconto no pagamento anual"
+    cons:
+      - "Sem plano gratuito permanente"
+      - "Cobranca por agente encarece o time conforme ele cresce"
+      - "Recursos de IA e contact center sao add-ons pagos a parte"
+    best_for: "Operacoes de atendimento no Brasil que preferem contratar em reais"
+    faq:
+      - question: "Tem teste gratuito?"
+        answer: "Sim, 14 dias com os recursos do Suite Professional, segundo a pagina de precos."
+      - question: "Qual o plano mais barato?"
+        answer: "O Support Team, a R$ 135 por agente/mes no plano anual."
+  "en":
+    pros:
+      - "Prices published in Brazilian reais, with no currency conversion"
+      - "14-day trial with Suite Professional features"
+      - "20% discount on annual billing"
+    cons:
+      - "No permanent free plan"
+      - "Per-agent billing grows with the team"
+      - "AI and contact center capabilities are paid add-ons"
+    best_for: "Support teams in Brazil that prefer contracting in local currency"
+    faq:
+      - question: "Is there a free trial?"
+        answer: "Yes, 14 days with Suite Professional features, according to the pricing page."
+      - question: "What is the cheapest plan?"
+        answer: "Support Team, at R$ 135 per agent/month on annual billing."
